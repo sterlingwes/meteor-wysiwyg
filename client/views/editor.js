@@ -13,14 +13,13 @@ Template.wysiwyg_editor.rendered = function() {
                     });
                  }
             });
-        }, 250);
+        }, 200);
     });
     Meteor.Loader.loadCss('/lib/wysiwyg/css/trumbowyg.css');
     Meteor.Loader.loadJs('/lib/wysiwyg/trumbowyg.min.js', function() {
         Session.set('hasWysiwygEditor', true);
-        Meteor.Loader.loadJs('/lib/sanitize/sanitize.js', function() {
-            Session.set('hasSanitizer',true);
-        });
     });
-    
+    Meteor.Loader.loadJs('/lib/sanitize/sanitize.js', function() {
+        Session.set('hasSanitizer',true);
+    });
 };
